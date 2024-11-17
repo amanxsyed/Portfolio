@@ -1,3 +1,4 @@
+import MagicButton from "./ui/MagicButton";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 
@@ -24,6 +25,11 @@ export const Hero = () => {
           <h2 className="uppercase  tracking-widest text-xs text-center text-blue-100 max-w-80 ">Dynamic Web Magic with Next.js</h2>
           <TextGenerateEffect words="Transforming Concepts into Seamless Experiences" className="text-[40px] md:text-5xl lg:text-6xl text-center" />
           <p className="text-center md:tracking-wider mb-4 text-sm mb:text-lg lg:text-2xl ">Hi, I&apos;m Syed Aman, a Next.js developer based in Pakistan</p>
+          <a href="#about">
+            <MagicButton 
+              title="Show my Work"
+            />
+          </a>
         </div>
       </div>
     </div>
