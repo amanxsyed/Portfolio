@@ -1,6 +1,11 @@
+'use client'
 import { cn } from "@/utils/cn";
 import { BackgroundGradientAnimation } from "./GradientBg";
 import GridGlobe from "./GridGlobe";
+import Lottie from "react-lottie";
+import { useState } from "react";
+import animationData from '@/data/confetti.json';
+import MagicButton from "./MagicButton";
 
 export const BentoGrid = ({
   className,
@@ -40,6 +45,7 @@ export const BentoGridItem = ({
   titleClassName?: string;
   spareImg?: string;
 }) => {
+  const [copied, setcopied] = useState(false)
   return (
     <div
       className={cn(
@@ -114,7 +120,7 @@ export const BentoGridItem = ({
               </div>
               <div className="flex flex-col gap-3 lg:gap-6 ">
                 <span className="py-4 rounded-lg text-center bg-[#10132E]" />
-                {["Figma", "Django", "mySQL"].map((item) => (
+                {["React", "Django", "mySQL"].map((item) => (
                   <span
                     key={item}
                     className="py-2 lg:py4 lg:px-3 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]"
@@ -122,6 +128,21 @@ export const BentoGridItem = ({
                     {item}
                   </span>
                 ))}
+              </div>
+            </div>
+          )}
+          {id ===6 && (
+            <div className="mt-5 relative">
+              <div className={`absolute -bottom-5 right-0`}>
+                <Lottie options={{
+                  loop: copied,
+                  autoplay: copied,
+                  animationData,
+                  rendererSettings: {
+                    preserveAspectRatio: 'xMidYMid slice'
+                  }
+                }} />
+              
               </div>
             </div>
           )}
